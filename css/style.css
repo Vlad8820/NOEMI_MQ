@@ -741,7 +741,7 @@ body {
 .copyright {
     margin-left: 12px;
     padding: 47px 0;
-    
+
     font-size: 12px;
     font-weight: bold;
 }
@@ -756,6 +756,7 @@ body {
     padding: 55px 15px 37px 15px;
     position: fixed;
     display: none;
+    /*!!!!!!!!!!!display:flex!!!!!!!!!!! */
     justify-content: center;
     align-items: center;
 
@@ -766,11 +767,16 @@ body {
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.6);
+
+    z-index: 10;
 }
 
 .popup-form {
+    /* margin-top: -76px; */
     max-width: 331px;
     padding: 30px 25px;
+    padding-top: 26px;
+    padding-left: 23px;
     position: relative;
 
     background-color: #fff;
@@ -803,7 +809,7 @@ body {
     display: flex;
     justify-content: center;
 
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
 
     text-transform: uppercase;
@@ -812,18 +818,18 @@ body {
 .popup-title::before {
     content: "";
     position: absolute;
-    width: 67px;
+    width: 66px;
     height: 4px;
 
     background-color: rgb(181, 159, 91);
     opacity: 0.4;
 
-    top: 40px;
+    top: 30px;
 
 }
 
 .form-group-select {
-    margin-top: 43px;
+    margin-top: 37px;
 }
 
 .popup-text {
@@ -836,7 +842,7 @@ body {
 
 .popup-select {
     margin-top: 7px;
-    padding-left: 20px;
+    padding-left: 17px;
 
     min-width: 100%;
     min-height: 49px;
@@ -865,7 +871,7 @@ body {
 }
 
 .form-group-radio {
-    margin-top: 33px;
+    margin-top: 31px;
     vertical-align: middle;
 }
 
@@ -876,7 +882,7 @@ body {
 }
 
 .radio-group {
-    margin-left: 35px;
+    margin-left: 33px;
 
     cursor: pointer;
 
@@ -907,16 +913,21 @@ body {
 }
 
 .radio-label {
-    margin-left: 7px;
+    margin-left: 6px;
 }
 
 .form-group-textarea {
-    margin-top: 33px;
+    margin-top: 28px;
+}
+
+.popup-text {
+    line-height: 1.2;
 }
 
 .popup-textarea {
     margin-top: 9px;
-    padding: 22px;
+    padding: 20px;
+    padding-top: 15px;
 
     min-width: 100%;
     min-height: 132px;
@@ -937,7 +948,7 @@ body {
 }
 
 .popup-button {
-    margin-top: 26px;
+    margin-top: 21px;
     padding: 0;
     min-width: 100%;
     min-height: 48px;
@@ -1019,16 +1030,14 @@ body {
     .trends-flex {
         margin-top: 28px;
 
-
         display: flex;
         flex-wrap: wrap;
     }
 
     .trend-item {
         padding: 15px 19px;
-        min-width: calc(50% - 2px);
+        max-width: calc(50% - 2px);
         min-height: 247px;
-
     }
 
     .trend-item:nth-child(odd) {
@@ -1041,6 +1050,10 @@ body {
 
         width: 100%;
         box-sizing: border-box;
+    }
+
+    .content-garden {
+        padding-right: 81px;
     }
 
     .trend-title {
@@ -1099,7 +1112,7 @@ body {
 
     .side-bar {
         margin-left: 35px;
-        max-width: 271px;
+        min-width: 271px;
         box-sizing: border-box;
     }
 
@@ -1172,8 +1185,9 @@ body {
     }
 
     .copyright {
-        padding: 47px 0;
-        }
+        padding-top: 48px;
+        padding-bottom: 37px;
+    }
 
     .product-shop {
         margin-top: 18px;
@@ -1181,37 +1195,62 @@ body {
 
     .popup-form {
         padding: 55px 30px;
-        max-width: 390px;
+        padding-top: 51px;
+        max-width: 330px;
+    }
+
+    .popup-close {
+        top: -36px;
+    }
+
+    .popup-title {
+        font-size: 18px;
+    }
+
+    .popup-title::before {
+        top: 31px;
+        margin-left: -8px;
+    }
+
+    .popup-select {
+        margin-top: 5px;
+    }
+
+    .radio-group {
+        margin-left: 31px;
     }
 }
 
 @media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
-        .trends-flex {
-            flex-wrap: nowrap;
-        }
-
-        .trend-item {
-            margin: 0;
-            margin-left: 4px;
-            min-height: 320px;
-
-            box-sizing: border-box;
-        }
-
-        .trend-item:first-child {
-            margin-left: 0;
-        }
-
-        .trend-item:nth-child(odd) {
-            margin-right: 0;
-        }
+    .trends-flex {
+        flex-wrap: nowrap;
     }
+
+    .trend-item {
+        margin: 0;
+        margin-left: 4px;
+        min-height: 320px;
+
+        max-width: calc(25% - 3px);
+
+
+        box-sizing: border-box;
+    }
+
+    .trend-item:first-child {
+        margin-left: 0;
+    }
+
+    .trend-item:nth-child(odd) {
+        margin-top: 0;
+        margin-right: 0;
+    }
+}
 
 /* ------------Laptop------------ */
 @media (min-width: 1201px) {
 
     .header {
-        min-height: auto;
         background-image: url("../img/banner-bg.jpg");
     }
 
@@ -1365,7 +1404,8 @@ body {
     }
 
     .side-bar {
-        margin-left: 124px;
+        margin-left: 115px;
+        max-width: 271px
     }
 
     .products-title {
@@ -1414,12 +1454,63 @@ body {
         margin-top: 3px;
     }
 
+    .social {
+        padding: 33px 0;
+    }
+
     .social-list {
         margin-left: 7px;
     }
 
     .copyright {
-        padding-top: 71px;
-        padding-bottom: 44px;
+        padding-top: 70px;
+        padding-bottom: 43px;
+    }
+
+    .popup-form {
+        padding-top: 47px;
+        padding-bottom: 54px;
+    }
+
+    .popup-close {
+        min-width: 19px;
+        min-height: 19px;
+        background-size: 19px;
+
+        top: -26px;
+        right: -3px;
+    }
+
+    .popup-title {
+        font-size: 20px;
+    }
+
+    .popup-select {
+        margin-top: 6px;
+
+        background-position: center right 12px;
+        background-size: 9px;
+    }
+
+    .radio-block {
+        margin-top: 8px;
+    }
+
+    .radio-group {
+        margin-left: 16px;
+    }
+
+    .radio-button {
+        min-width: 18px;
+        min-height: 18px;
+        background-size: 18px;
+    }
+
+    .form-group-textarea {
+        margin-top: 29px;
+    }
+
+    .popup-textarea {
+        margin-top: 8px; 
     }
 }
