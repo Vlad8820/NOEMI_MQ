@@ -755,8 +755,7 @@ body {
 .popup {
     padding: 55px 15px 37px 15px;
     position: fixed;
-    display: none;
-    /*!!!!!!!!!!!display:flex!!!!!!!!!!! */
+    display: flex;
     justify-content: center;
     align-items: center;
 
@@ -771,8 +770,11 @@ body {
     z-index: 10;
 }
 
+._hidden {
+    display: none;
+}
+
 .popup-form {
-    /* margin-top: -76px; */
     max-width: 331px;
     padding: 30px 25px;
     padding-top: 26px;
@@ -1037,6 +1039,7 @@ body {
     .trend-item {
         padding: 15px 19px;
         max-width: calc(50% - 2px);
+        flex-basis: 50%;
         min-height: 247px;
     }
 
@@ -1511,6 +1514,6 @@ body {
     }
 
     .popup-textarea {
-        margin-top: 8px; 
+        margin-top: 8px;
     }
 }
